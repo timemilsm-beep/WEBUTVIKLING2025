@@ -1,11 +1,67 @@
+<!-- Forteller nettleseren at dette dokumentet bruker HTML5-standarden -->
 <!DOCTYPE html>
-<html lang="en">
+
+<!-- Starter HTML-dokumentet og setter språket til norsk bokmål via "lang" attributtet -->
+<html lang="nb">
   <head>
+    <!-- Setter tegnsettet til UTF-8 slik at norske bokstaver (æ, ø, å) vises riktig -->
     <meta charset="UTF-8" />
+
+    <!-- Gjør siden responsiv ved å skalere innholdet etter skjermbredden.
+         "width=device-width" = tilpass bredden til enhetens skjerm.
+         "initial-scale=1.0" = startzoom er 100%. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <!-- Viser tittelen på nettsiden i nettleserfanen -->
+    <title>Forside - Dataspæll</title>
   </head>
   <body>
-    <h1>Første fil</h1>
+    <!-- Kommentert ut <h1> - brukes kanskje til testing eller tidligere overskrift.
+         Kommentarer ignoreres av nettleseren -->
+    <!--<h1>Første fil</h1>-->
+
+    <!-- Header-delen av siden: inneholder logo og navigasjon -->
+    <header>
+      <!-- "a"-tag = hyperlenke. 
+           "href" attributtet peker til startsiden "index.html" -->
+      <a href="index.html">LOGO</a>
+
+      <!-- <nav> definerer en semantisk navigasjonsseksjon -->
+      <nav>
+        <!-- <ul> = unordered list, en punktliste for navigasjonslenker -->
+        <ul>
+          <!-- <li> = listeelement. Inneholder en lenke tilbake til forsiden -->
+          <li>
+            <!-- <a> = anker-tag for lenker. "href" peker til startsiden -->
+            <a href="index.html">Hjem</a>
+          </li>
+
+          <!-- Andre listeelement med lenke til produktsiden -->
+          <li>
+            <a href="products.html">Produkter</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- <section> = semantisk seksjon. 
+         Brukes for å gruppere relatert innhold som hører sammen -->
+    <section>
+      <!-- <h2> = underoverskrift. Viktig for SEO og tilgjengelighet. 
+           Hovedoverskrifter bør starte med <h1>, men her er <h2> brukt
+           fordi <h1> kanskje finnes andre steder -->
+      <h2>Crazy Gaming Deals</h2>
+
+      <!-- <img> = bilde. 
+           "src" = kilde-URL.
+           "alt" = alternativ tekst for skjermlesere og hvis bildet ikke lastes. -->
+      <img src="https://picsum.photos/200/300?grayscale" alt="_" />
+
+      <!-- <p> = paragraf-tag for vanlig tekst. Brukes til beskrivende innhold -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt
+      </p>
+    </section>
   </body>
 </html>
