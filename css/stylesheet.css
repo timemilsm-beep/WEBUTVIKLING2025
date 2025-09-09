@@ -1,44 +1,78 @@
+/* 
+  GLOBALT: Setter en lesbar standardfont for hele dokumentet.
+  HVORFOR: Sans-serif (Arial/Helvetica) gir god skjermlesbarhet og
+  skaper et ensartet uttrykk på tvers av sider.
+*/
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
-/*GLOBAL HEADER*/
+/* ========== GLOBAL HEADER ========== */
 
+/*
+  #mainlogo: Stil for hovedlogoen/merkenavnet som lenke.
+  HVORFOR: Større og tyngre typografi gjør logoen tydelig; 
+  fjerner understrek for et renere header-uttrykk; 
+  fargevalg i grått (#4d4a4a) gir mykere kontrast enn helt svart.
+*/
 #mainlogo{
-    font-size: 30px;
-    font-weight: 900;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: #4d4a4a;
+    font-size: 30px;            /* HVA: Stor skrift for visuell hierarki. */
+    font-weight: 900;           /* HVA: Ekstra fet for å signalisere merke/primærsmerke. */
+    font-family: Arial, Helvetica, sans-serif; /* HVA: Sikrer samme font som globalt, og fallback. */
+    text-decoration: none;      /* HVA: Fjerner understrek siden dette fungerer som logo. */
+    color: #4d4a4a;             /* HVA: Dempet grå for mindre hard kontrast enn #000. */
 }
 
+/*
+  a: Standardstil for lenker.
+  HVORFOR: Fjerner understrek og setter nøytral farge; 
+  dette gir et minimalistisk uttrykk. (Vurder :hover/:focus for tydelig interaksjon.)
+*/
 a{
-    color: #000;
-    text-decoration: none;
+    color: #000;                /* HVA: Nøytral svart som standard lenkefarge. */
+    text-decoration: none;      /* HVA: Fjerner understrek for renere typografi. */
 }
 
 
-/*HOVEDINNHOLD*/
+/* ========== HOVEDINNHOLD ========== */
 
+/*
+  article: Kort/innholdsboks-oppsett.
+  HVORFOR: Marg og padding gir luft; subtil kantlinje definerer kort;
+  breddebegrensninger forbedrer lesbarhet og responsivitet.
+*/
 article{
-    margin: 1rem 0;
-    border:1px solid #efefef;
-    max-width: 400px;
-    width: 100%;
-    min-width: 250px;
-    padding: 1rem;
+    margin: 1rem 0;             /* HVA: Vertikal luft mellom artikler. */
+    border: 1px solid #efefef;  /* HVA: Lys kant for visuell avgrensing uten å dominere. */
+    max-width: 400px;           /* HVA: Hindrer for brede linjer – bedre lesbarhet. */
+    width: 100%;                /* HVA: Lar boksen fylle tilgjengelig plass i små visninger. */
+    min-width: 250px;           /* HVA: Sikrer at kortet ikke blir for smalt. */
+    padding: 1rem;              /* HVA: Innvendig luft for behagelig innholdsmarg. */
 
+    /*
+      img (nestet): Gjør bilder responsive inne i article.
+      HVORFOR: Full bredde sikrer at bilder skalerer med boksen og ikke flyter utenfor.
+      
+      OBS: Dette er CSS-nesting. For maksimal kompatibilitet i ren CSS,
+      skriv regelen som `article img { width: 100%; }`.
+    */
     img{
-        width: 100%;
+        width: 100%;            /* HVA: Skalerer bilde til kortets bredde. */
     }
-
 }
 
 
+/*
+  .btn: Primær knapp/lenke med knappestil.
+  HVORFOR: Kontraststerk bakgrunn for tydelig call-to-action; 
+  inline-block lar oss bruke padding og holde elementet på tekstlinje hvis ønsket.
+*/
 .btn{
-    display: inline-block;
-    background-color: #000;
-    color: #fff;
-    padding: 1rem;
+    display: inline-block;      /* HVA: Tillater padding/bredde, men flyter i tekst. */
+    background-color: #000;     /* HVA: Mørk bakgrunn gir klar kontrast mot hvit tekst. */
+    color: #fff;                /* HVA: Høy kontrast for tilgjengelighet/lesbarhet. */
+    padding: 1rem;              /* HVA: Stor klikkflate og visuelt balansert knapp. */
 }
+
+
