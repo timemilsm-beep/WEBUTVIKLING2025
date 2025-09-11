@@ -1,3 +1,13 @@
+:root{
+    /* 
+      Globale CSS-variabler for enkel gjenbruk av farger.
+      HVORFOR: Gir konsistent fargepalett og enklere vedlikehold.
+    */
+    --basic-grey: #efefefef;   /* Lys grå, brukes til bakgrunn og subtile elementer */
+    --basic-red: #6a0404;      /* Mørk rød, kan brukes for viktige knapper/markeringer */
+}
+
+
 /* 
   GLOBALT: Setter en lesbar standardfont for hele dokumentet.
   HVORFOR: Sans-serif (Arial/Helvetica) gir god skjermlesbarhet og
@@ -5,10 +15,30 @@
 */
 body{
     font-family: Arial, Helvetica, sans-serif;
+    margin:0; /* HVA: Fjerner standard nettlesermargin for å få mer kontroll over layout */
 }
 
 
 /* ========== GLOBAL HEADER ========== */
+#global-header{
+    display: flex;                    /* HVA: Bruker flexbox for fleksibel layout */
+    justify-content: space-between;   /* HVA: Plasserer logo til venstre og navigasjon til høyre */
+    align-items: center;              /* HVA: Vertikal sentrering av innholdet */
+    padding: 1rem;                    /* HVA: Luft rundt headeren for bedre balanse */
+
+    nav{
+        ul{
+            padding:0;                /* HVA: Fjerner standard padding for renere design */
+            margin:0;                 /* HVA: Fjerner standard marger */
+
+            li{
+                list-style: none;     /* HVA: Skjuler standard punkter i navigasjonslisten */
+                display: inline-block;/* HVA: Viser menyvalg horisontalt i stedet for vertikalt */
+            }
+        }
+    }
+}
+
 
 /*
   #mainlogo: Stil for hovedlogoen/merkenavnet som lenke.
@@ -24,6 +54,7 @@ body{
     color: #4d4a4a;             /* HVA: Dempet grå for mindre hard kontrast enn #000. */
 }
 
+
 /*
   a: Standardstil for lenker.
   HVORFOR: Fjerner understrek og setter nøytral farge; 
@@ -32,6 +63,13 @@ body{
 a{
     color: #000;                /* HVA: Nøytral svart som standard lenkefarge. */
     text-decoration: none;      /* HVA: Fjerner understrek for renere typografi. */
+}
+
+
+/* HERO-section */
+.deal-section{
+    background-color:var(--basic-grey); /* HVA: Setter lys bakgrunn for å fremheve seksjonen */
+    padding: 1rem;                     /* HVA: Gir luft rundt innholdet */
 }
 
 
@@ -72,7 +110,6 @@ article{
     display: inline-block;      /* HVA: Tillater padding/bredde, men flyter i tekst. */
     background-color: #000;     /* HVA: Mørk bakgrunn gir klar kontrast mot hvit tekst. */
     color: #fff;                /* HVA: Høy kontrast for tilgjengelighet/lesbarhet. */
-    padding: 1rem;              /* HVA: Stor klikkflate og visuelt balansert knapp. */
+    padding: 1rem;              /* HVA: Stor klikkflate og balansert spacing */
+    border: none;               /* HVA: Fjerner standardkant for renere uttrykk */
 }
-
-
