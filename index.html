@@ -61,7 +61,7 @@
            src angir bildekilde (her placeholder-tjeneste).
            alt bør beskrive bildet for skjermlesere (tom alt betyr dekorativt bilde).
            Tips: Bruk beskrivende alt, f.eks. alt="Gråtonet spillkampanjebanner". -->
-      <img src="https://picsum.photos/200/300?grayscale" alt="" />
+      <!-- <img src="https://picsum.photos/700/500?grayscale" alt="" /> -->
 
       <!-- <p> avsnitt med beskrivende tekst. -->
       <p>
@@ -71,7 +71,7 @@
 
       <!-- Primær handling (CTA) som leder til tilbudsside.
            href="offers.html" peker til egen side med kampanjer. -->
-      <a href="offers.html">Se tilbud</a>
+      <a href="offers.html" class="btn">Se tilbud</a>
     </section>
 
     <!-- <main> markerer hovedinnholdet på siden.
@@ -168,7 +168,7 @@
 
     <!-- <aside> for supplerende/sekundært innhold (f.eks. nyhetsbrev/klubbinnmelding).
          Skjermlesere forstår dette som sidestolpe/tillegg. -->
-    <aside>
+    <aside class="side-container">
       <!-- Tittel for aside-innhold. -->
       <h4>Meld deg inn i spællklubben</h4>
 
@@ -196,13 +196,11 @@
 
         <!-- Etikett knyttet til avkrysningsboks via for="age-validation" og id="age-validation".
              Dette gjør at klikk på teksten toggler boksen. -->
-        <label for="age-validation">Over 18</label>
-
-        <!-- Avkrysningsboks (checkbox) for aldersbekreftelse.
-             id matcher label-for.
-             required gjør feltet obligatorisk før innsending. -->
-        <input type="checkbox" id="age-validation" required>
+        <label class="age-check" for="age-validation"> Over 18
+          <input type="checkbox" id="age-validation" required>
+        </label>
       </form>
     </aside>
+    <footer>Webutvikling 2025</footer>
   </body>
 </html>
